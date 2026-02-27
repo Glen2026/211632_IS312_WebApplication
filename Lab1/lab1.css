@@ -1,0 +1,139 @@
+
+/* ------ Basic Reset & Base ------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.5;
+  color: #222;
+  background-color: #ffffff;
+}
+
+
+/* ------ Page Grid (outer) ------ */
+.page {
+  /* a) CSS Grid used for the main page regions */
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;  /* header, nav, main, footer */
+  min-height: 0;
+
+  /* match the screenshot spacing */
+  gap: 0;
+  padding: 5px;        /* white margins around the colored bars */
+  
+}
+
+/* ------ Header ------ */
+.site-header {
+  background-color: #0c7a17; /* rich green */
+  color: #0b2c04;            /* very dark green for heading text */
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+}
+
+.site-header h1 {
+  margin: 0;
+ font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 20px;
+}
+.site-nav{
+  padding: 0px;
+  background-color: #ffef2b;
+}
+/* ------ Navigation ------ */
+.site-nav ul {
+  background-color: #ffef2b; /* yellow strip below header */
+  padding: 8px 15px 1;
+  list-style: none;
+  display: flex;
+  justify-content: left;
+}
+.site-nav ul li {
+  margin: 0 10px;
+}
+
+
+
+.site-nav ul li a{
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: 2px solid transparent;
+  transition: all o.3s ease;
+}
+
+
+.site-nav ul li a:hover {
+  background-color: #eeeeee;
+  padding: 18px;
+
+}
+
+
+/* ------ Main content (two columns) ------ */
+.site-main {
+  /* a) CSS Grid used for content columns */
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* left column narrower than right */
+  gap: 40px;
+  padding: 15px 0px;
+}
+
+.panel{
+  padding: 5px;
+}
+.panel h2 {
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.link-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding-left: 18px; /* show bullets like the screenshot links list */
+}
+
+.link-list a {
+  color: #3b21a2;  /* purple-ish link tone */
+  text-decoration: underline;
+}
+
+
+.link-list a:hover,
+.link-list a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+/* ------ Footer ------ */
+.site-footer {
+  background-color: #eeeeee; /* light gray bar */
+  text-align: center;
+  padding: 12px;
+  color: #333;
+  
+}
+
+.site-footer small {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* ------ Responsive tweaks ------ */
+@media (max-width: 900px) {
+  .site-main {
+    grid-template-columns: 1fr; /* stack columns on smaller screens */
+  }
+}
